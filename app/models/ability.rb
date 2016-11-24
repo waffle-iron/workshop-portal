@@ -39,16 +39,28 @@ class Ability
       can [:new, :create], ApplicationLetter
       can [:index, :show, :edit, :update, :destroy], ApplicationLetter, user: { id: user.id }
     end
+    
     if user.role? :tutor
       # ...
     end
+    
     if user.role? :organizer
       can [:index, :show], Profile
       can [:index, :show], ApplicationLetter
       # ...
     end
+    
     if user.role? :admin
       can :manage, :all
     end
+
+    if user.role? :coach
+      can [:index, :show], Profile
+      can [:edit, :update, :destroy], Profile, user: { id: user.id }
+      can [:index, :show], ApplicationLetter
+      # ...
+    end
+
+
   end
 end
