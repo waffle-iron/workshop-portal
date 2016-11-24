@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
 
   before_create :set_default_role
 
-  ROLES = %i[pupil tutor organizer admin]
+  ROLES = %i[pupil tutor organizer admin coach]
 
   def role?(base_role)
     return false unless role

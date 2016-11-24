@@ -31,4 +31,10 @@ describe User do
     user = FactoryGirl.build(:user, email: nil)
     expect(user).to_not be_valid
   end
+
+  it "is created by user factory with the role coach" do
+    user = FactoryGirl.create(:user, role: "coach")
+    expect(user).to be_valid
+  end
+  
 end
