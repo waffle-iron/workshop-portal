@@ -98,4 +98,21 @@ describe User do
     expect(ability).to_not be_able_to(:update, another_application)
     expect(ability).to_not be_able_to(:destroy, another_application)
   end
+
+  it "can only ... coach" do
+    user = FactoryGirl.create(:user, role: :coach)
+    another_user = FactoryGirl.create(:user)
+    another_profile = FactoryGirl.create(:profile, user: another_user)
+    another_application = FactoryGirl.create(:application_letter, user: another_user)
+    ability = Ability.new(user)
+
+    expect(ability).to be_able_to(:index, Profile)
+    expect(ability).to be_able_to(:show, another_profile)
+
+    expect(ability).to_not be_able_to(:edit, another_profile)
+    expect(ability).to_not be_able_to(:update, another_profile)
+    expect(ability).to_not be_able_to(:destroy, another_profile)
+
+  end
+
 end

@@ -55,9 +55,9 @@ class Ability
     end
 
     if user.role? :coach
-      can [:index, :show], Profile
-      can [:edit, :update, :destroy], Profile, user: { id: user.id }
-      can [:index, :show], ApplicationLetter
+      can [:new, :create], Profile
+      can [:index, :show, :edit, :update, :destroy], Profile, user: { id: user.id }
+      cannot [:edit, :update, :destroy], Profile
       # ...
     end
 
