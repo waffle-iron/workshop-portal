@@ -65,6 +65,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.1.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     codeclimate-test-reporter (1.0.1)
     coderay (1.1.1)
     commonjs (0.2.7)
@@ -262,6 +265,7 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (~> 2.5)
+  capybara-webkit (~> 1.1.0)
   codeclimate-test-reporter (~> 1.0.0)
   coveralls
   delocalize

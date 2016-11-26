@@ -21,6 +21,8 @@ RSpec.configure do |config|
   # Use color in STDOUT
   config.color = true
 
+  Capybara.javascript_driver = :webkit
+
   # Use color not only in STDOUT but also in pagers and files
   # config.tty = true
   
