@@ -32,13 +32,9 @@ describe "Event", type: :feature do
       fill_in 'Maximale Teilnehmerzahl', :with => 25
       select_date_within_selector(first_from, '.event-date-picker-start')
       select_date_within_selector(first_to, '.event-date-picker-end')
-      puts page.html
       page.find("#event-add-date-picker").click
-      puts "========================= NEXT TRY ==================="
-      puts page.html
 
-      start = page.all('.event-date-picker')[1].find('.event-date-picker-start')
-      select_date_within_selector(second_from, start)
+      select_date_within_selector(second_from, '.event-date-picker:nth-child(2) .event-date-picker-start')
       select_date_within_selector(second_to, '.event-date-picker:nth-child(2) .event-date-picker-end')
       click_button "Event erstellen"
 
