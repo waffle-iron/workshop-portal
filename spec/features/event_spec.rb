@@ -37,6 +37,7 @@ describe "Event", type: :feature do
       # don't do this at home children. Capbaray
       # sleep 5
 
+      find('.event-date-picker:nth-of-type(2) .event-date-picker-start')
       select_date_within_selector(second_from, '.event-date-picker:nth-of-type(2) .event-date-picker-start')
       select_date_within_selector(second_to, '.event-date-picker:nth-of-type(2) .event-date-picker-end')
       click_button "Event erstellen"
