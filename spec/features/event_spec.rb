@@ -33,10 +33,12 @@ describe "Event", type: :feature do
       select_date_within_selector(first_from, '.event-date-picker-start')
       select_date_within_selector(first_to, '.event-date-picker-end')
       page.find("#event-add-date-picker").click
-      sleep 5
 
-      select_date_within_selector(second_from, '.event-date-picker:nth-child(2) .event-date-picker-start')
-      select_date_within_selector(second_to, '.event-date-picker:nth-child(2) .event-date-picker-end')
+      # don't do this at home children. Capbaray
+      # sleep 5
+
+      select_date_within_selector(second_from, '.event-date-picker:nth-of-type(2) .event-date-picker-start')
+      select_date_within_selector(second_to, '.event-date-picker:nth-of-type(2) .event-date-picker-end')
       click_button "Event erstellen"
 
       expect(page).to have_text(first_from.to_s + ' bis ' + first_to.to_s)
