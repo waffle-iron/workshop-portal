@@ -33,6 +33,7 @@ describe "Event", type: :feature do
       select_date_within_selector(first_from, '.event-date-picker-start')
       select_date_within_selector(first_to, '.event-date-picker-end')
       page.find("#event-add-date-picker").click
+      sleep 5
 
       select_date_within_selector(second_from, '.event-date-picker:nth-child(2) .event-date-picker-start')
       select_date_within_selector(second_to, '.event-date-picker:nth-child(2) .event-date-picker-end')
