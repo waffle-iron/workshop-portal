@@ -32,14 +32,16 @@ describe "Event", type: :feature do
       fill_in 'Maximale Teilnehmerzahl', :with => 25
       select_date_within_selector(first_from, '.event-date-picker-start')
       select_date_within_selector(first_to, '.event-date-picker-end')
-      page.find("#event-add-date-picker").click
+      click_link "Zeitspanne hinzufügen"
 
-      # don't do this at home children. Capbaray
-      # sleep 5
+      # FIXME if you have a better solution, thank the gods!
+      # Don't do this at home children. Capybara (on travis) does not wait
+      # correctly until our new datepicker appears, so we have to force it
+      # to wait manually
+      # sleep 3
 
-      find('.event-date-picker:nth-of-type(2) .event-date-picker-start')
-      select_date_within_selector(second_from, '.event-date-picker:nth-of-type(2) .event-date-picker-start')
-      select_date_within_selector(second_to, '.event-date-picker:nth-of-type(2) .event-date-picker-end')
+      select_date_within_selector(second_from, '.event-date-picker:nth-child(2) .event-date-picker-start')
+      select_date_within_selector(second_to, '.event-date-picker:nth-child(2) .event-date-picker-end')
       click_button "Event erstellen"
 
       expect(page).to have_text(first_from.to_s + ' bis ' + first_to.to_s)
