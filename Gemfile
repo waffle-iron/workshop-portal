@@ -84,7 +84,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.2'
   gem 'capybara', '~> 2.5'
   gem 'capybara-webkit', '~> 1.1.0'
-  # gem 'database_cleaner'
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
 end
 
