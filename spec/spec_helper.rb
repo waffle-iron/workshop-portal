@@ -53,12 +53,9 @@ RSpec.configure do |config|
     end
   end
   config.before(:each) do
-    puts 'HI.'
     DatabaseCleaner.start
-    puts 'BlBLBLB.'
   end
   config.after(:each) do
-    puts 'BYYYYYYYYYYYYEEEEE'
     DatabaseCleaner.clean
   end
 
