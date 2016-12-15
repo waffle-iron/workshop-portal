@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/hpi-swt2/workshop-portal.png?label=ready&title=Ready)](https://waffle.io/hpi-swt2/workshop-portal)
 # workshop-portal
 
 A Ruby on Rails app to manage workshops
